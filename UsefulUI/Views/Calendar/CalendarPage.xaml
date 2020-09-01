@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:model="clr-namespace:UsefulUI.Models"
+             xmlns:views="clr-namespace:ESIXamarinLib.Calendar.Views;assembly=ESIXamarinlib"
+             xmlns:local="clr-namespace:ESIXamarinLib.Calendar;assembly=ESIXamarinLib"
+             mc:Ignorable="d" Title="{Binding Title}"
+             Visual="Material"
+             x:Class="UsefulUI.Views.Calendar.CalendarPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:CalendarResources/>
+            </ResourceDictionary.MergedDictionaries>
+            <Color x:Key="DarkGreen">#006400</Color>
+            <Color x:Key="Blue">#0000FF</Color>
+            <Color x:Key="Red">#FF0000</Color>
+            <Color x:Key="Black">#000000</Color>
+
+            <Style TargetType="views:CalendarMonthView" x:Key="Theme1">
+                <Setter Property="views:CalendarMonthView.SundayColor" Value="Red"/>
+                <Setter Property="views:CalendarMonthView.SundayBackgroundColor" Value="Transparent"/>
+                <Setter Property="views:CalendarMonthView.SaturdayColor" Value="Red"/>
+                <Setter Property="views:CalendarMonthView.SaturdayBackgroundColor" Value="Transparent"/>
+                
+                <Setter Property="views:CalendarMonthView.DefaultColor" Value="Black"/>
+                <Setter Property="views:CalendarMonthView.WeekIteratorIconColor" Value="{StaticResource DarkGreen}"/>
+                <Setter Property="views:CalendarMonthView.WeekSelectorFontSize" Value="Large"/>
+                <Setter Property="views:CalendarMonthView.WeekIteratorNameColor" Value="{StaticResource Blue}"/>
+
+                <Setter Property="views:CalendarMonthView.MonthIteratorIconColor" Value="{StaticResource DarkGreen}"/>
+                <Setter Property="views:CalendarMonthView.MonthSelectorFontSize" Value="Large"/>
+                <Setter Property="views:CalendarMonthView.MonthIteratorNameColor" Value="{StaticResource Blue}"/>
+
+                <Setter Property="views:CalendarMonthView.YearIteratorIconColor" Value="{StaticResource DarkGreen}"/>
+                <Setter Property="views:CalendarMonthView.YearSelectorFontSize" Value="Large"/>
+                <Setter Property="views:CalendarMonthView.YearIteratorNameColor" Value="{StaticResource Blue}"/>
+                <Setter Property="views:CalendarMonthView.MonthYearSelectorGridBackground" Value="#8390FA"/>
+                <Setter Property="views:CalendarMonthView.MonthSelectorDim" Value="30.0"/>
+
+                <Setter Property="views:CalendarMonthView.IteratorIconLeft" Value="{x:Static model:FontAwesome.ChevronCircleLeft}"/>
+                <Setter Property="views:CalendarMonthView.IteratorIconRight" Value="{x:Static model:FontAwesome.ChevronCircleRight}"/>
+
+                <Setter Property="views:CalendarMonthView.DayOfWeekFontSize" Value="Small"/>
+                <Setter Property="views:CalendarMonthView.DayOfWeekFontAttribute" Value="Italic"/>
+                <Setter Property="views:CalendarMonthView.WeekHeaderTextColor" Value="{StaticResource Black}"/>
+                <Setter Property="views:CalendarMonthView.WeekHeaderDim" Value="{OnPlatform iOS=22.0, Android=30.0}" />
+
+                <Setter Property="views:CalendarMonthView.WeekViewHeaderBackground" Value="#A9B1FC"/>
+
+                <Setter Property="views:CalendarMonthView.NotCurrentMonthTextColor" Value="#5E6D71"/>
+                <Setter Property="views:CalendarMonthView.NotCurrentMonthBackgroundColor" Value="#B7C4D3"/>
+
+                <Setter Property="views:CalendarMonthView.CalendarDayFontSize" Value="Small"/>
+                <Setter Property="views:CalendarMonthView.CalendarDayPadding" Value="4,0"/>
+                <Setter Property="views:CalendarMonthView.CalendarBackground" Value="Transparent"/>
+                <Setter Property="views:CalendarMonthView.TodayColor" Value="White"/>
+                <Setter Property="views:CalendarMonthView.GridDim" Value="50.0"/>
+
+                <Setter Property="views:CalendarMonthView.TodayBackgroundColor" Value="#6200ED"/>
+                <Setter Property="views:CalendarMonthView.SelectedDateBackgroundColor" Value="#A9B1FC"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Clicked="Mode_Clicked" >
+            <ToolbarItem.IconImageSource>
+            <FontImageSource x:Name="mode" FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static model:FontAwesome.Sort}" Color="White" />
+        </ToolbarItem.IconImageSource>     
+        </ToolbarItem>
+        <ToolbarItem Text="Cal" Clicked="Calendar_Clicked" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static model:FontAwesome.Home}" Color="White"/>
+            </ToolbarItem.IconImageSource>            
+        </ToolbarItem>
+        <ToolbarItem Text="Cal" Clicked="Info_Clicked" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static model:FontAwesome.InfoCircle}" Color="White"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"  Margin="4,0">
+            <views:CalendarMonthView x:Name="monthView" SelectedDates="{Binding SelectedDates}" IsVisible="{Binding ShowCalendar}" Style="{StaticResource Theme1}"
+                        SelectedMonthIterator="{Binding SelectedMonth}" SelectedYearIterator="{Binding SelectedYear}" CloseOnSelect="{Binding CloseOnSelect}"
+                        IsWeekFormat="{Binding WeekMode}"  StartOfWeek="Monday" WeekViewOnSelect="false" SundayBackgroundColor="Yellow"
+                        VerticalOptions="Center" MultiSelect="false" HideNonMonthDates="false">
+            </views:CalendarMonthView>
+            <ListView ItemsSource="{Binding SelectedDates}" Margin="4">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <model:SelectAllEntry Text="{Binding TestText}" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Prev" Clicked="PrevButton_Clicked"/>
+                <Button Text="Next" Clicked="NextButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

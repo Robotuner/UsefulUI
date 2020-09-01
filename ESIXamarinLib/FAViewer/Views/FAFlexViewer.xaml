@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ESIXamarinLib.FAViewer.ViewModels"
+             mc:Ignorable="d"
+             x:Class="ESIXamarinLib.FAViewer.Views.FAFlexViewer">
+    <ContentPage.BindingContext>
+        <local:FAViewerViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Picker ItemsSource="{Binding FontList}" SelectedItem="{Binding SelectedFont}" />
+            <Entry Grid.Row="1" Placeholder="Enter a filter" Text="{Binding Filter}" PropertyChanged="Entry_PropertyChanged"/>
+            <ScrollView Grid.Row="2" >
+                 <FlexLayout BindableLayout.ItemsSource="{Binding SelectedFont.FilteredList}"
+                             Direction="Row" AlignItems="Start" JustifyContent="SpaceEvenly" Wrap="Wrap" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical">
+                                <Label FontFamily="{Binding Source={RelativeSource AncestorType={x:Type local:FAViewerViewModel}}, Path=SelectedFont.FontFamily}" 
+                                       Text="{Binding Character}" FontSize="100" TextColor="DarkGreen"/>
+                                <Label Text="{Binding Code}" FontSize="Small" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Key}" FontSize="Small" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>               
+            </ScrollView>
+
+            <ActivityIndicator Grid.Row="0" Grid.RowSpan="3" IsVisible="{Binding IsBusy}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

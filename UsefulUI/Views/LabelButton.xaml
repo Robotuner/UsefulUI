@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrls="clr-namespace:ESIXamarinLib.Controls;assembly=ESIXamarinLib"
+             xmlns:model="clr-namespace:UsefulUI.Models"
+             xmlns:local="clr-namespace:UsefulUI.ViewModels"
+             Title="Clickable Label with Icon"
+             x:Class="UsefulUI.Views.LabelButton">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cal" Clicked="Info_Clicked" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static model:FontAwesome.InfoCircle}" Color="White" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:LabelButtonViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+            <ctrls:ESILabelButton ButtonMargin="4" ButtonCornerRadius="8" ButtonText="{Binding Message}" ButtonTextMargin="8,10" ButtonWidthRequest="200"
+                                  ButtonIconFamily="{StaticResource FontAwesomeSolid}" ButtonIcon="{x:Static model:FontAwesome.Ban}"
+                                  ButtonIconColor="Red" ButtonBackground="Aquamarine" ButtonAttributes="Bold" Command="{Binding LabelClickedCommand}"/>
+            <!--<Button Text="{Binding Message}" Margin="8,10" WidthRequest="200" BackgroundColor="Aquamarine" FontAttributes="Bold" >
+
+            </Button>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

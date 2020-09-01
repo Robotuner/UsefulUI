@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsefulUI.Views.MultiColumnGrid.MGTemplateC">
+  <ContentView.Content>
+        <StackLayout BackgroundColor="White">
+          <Label Text="MG Template C" />
+            <Label Text="MG Template c second line" />
+            <Label Text="MG Template c third line" />
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

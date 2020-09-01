@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:ESIXamarinLib.FAViewer.ViewModels"
+             mc:Ignorable="d" Title="FontAwesome Viewer"
+             x:Class="ESIXamarinLib.FAViewer.Views.FAViewer">
+    <ContentPage.BindingContext>
+        <local:FAViewerViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="4,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Picker ItemsSource="{Binding FontList}" SelectedItem="{Binding SelectedFont}" />
+            <Entry Grid.Row="1" Placeholder="Enter a filter" Text="{Binding Filter}" PropertyChanged="Entry_PropertyChanged"/>
+            <CollectionView Grid.Row="2" ItemsSource="{Binding SelectedFont.FilteredList}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontFamily="{Binding Source={RelativeSource AncestorType={x:Type local:FAViewerViewModel}}, Path=SelectedFont.FontFamily}" 
+                                   Text="{Binding Character}" Margin="0,2" TextColor="DarkGreen" FontSize="80"/>
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                                <Label Text="{Binding Code}" FontSize="Medium"/>
+                                <Label Text="{Binding Key}" TextColor="DarkGray" FontSize="Small"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <ActivityIndicator Grid.Row="0" Grid.RowSpan="3" IsVisible="{Binding IsBusy}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

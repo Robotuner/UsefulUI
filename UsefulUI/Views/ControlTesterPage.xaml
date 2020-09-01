@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:UsefulUI.ViewModels"
+             xmlns:model="clr-namespace:ESIStagingApp.Models"
+             xmlns:behaviors="clr-namespace:ESIXamarinLib.Behaviors;assembly=ESIXamarinLib"
+             mc:Ignorable="d" Title="Simple Entry Behaviors"
+             x:Class="UsefulUI.Views.ControlTesterPage">
+    <ContentPage.BindingContext>
+        <vm:ControlTesterPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Spacing="4" Margin="8,0" >
+            <StackLayout.Resources>
+                <Style TargetType="Entry" x:Key="decimalInputStyle">
+                    <Setter Property="behaviors:DecimalValidationBehavior.AttachBehavior" Value="True" />
+                </Style>
+            </StackLayout.Resources>
+            <Entry Placeholder="Expects Decimal value" Style="{StaticResource decimalInputStyle}"  Keyboard="Numeric"/>
+            <Entry Placeholder="Expects Double value" behaviors:DoubleValidationBehavior.AttachBehavior="True" Keyboard="Numeric" />
+            <Entry Placeholder="Expects Int value" behaviors:IntValidationBehavior.AttachBehavior="True" Keyboard="Numeric" />
+            <Entry behaviors:EmailValidationBehavior.AttachBehavior="True" Placeholder="Enter valid email address" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

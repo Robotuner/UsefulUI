@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ESIXamarinLib.Calendar.Views"
+             xmlns:converters="clr-namespace:ESIXamarinLib.Converters"
+             mc:Ignorable="d" Visual="MaterialParent"
+             x:Class="ESIXamarinLib.Calendar.Views.CalendarMonthView">
+    <ContentView.Resources>
+        <ResourceDictionary Source="../CalendarResources.xaml" />
+        <converters:NotConverter x:Key="notConverter"/>
+    </ContentView.Resources>   
+    <ContentView.Content>
+        <Grid x:Name="monthGrid" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="Fill" VerticalOptions="Start">
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped" />
+                <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped" />
+                <SwipeGestureRecognizer Direction="Up" Swiped="OnSwiped" />
+                <SwipeGestureRecognizer Direction="Down" Swiped="OnSwiped" />
+            </Grid.GestureRecognizers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="monthYearRowDef" Height="{Binding MonthSelectorDim}"/>
+                <RowDefinition x:Name="weekRowDef" Height="{Binding WeekHeaderDim}"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" x:Name="monthYear" Grid.ColumnSpan="7" BackgroundColor="{Binding MonthYearSelectorGridBackground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <local:IteratorControl Grid.Column="0" x:Name="monthIterator" VerticalOptions="Center"
+                        SelectorBackgroundColor="{Binding MonthSelectorBackground}" PrevPadding="4,0,0,0"
+                        NameColor="{Binding MonthIteratorNameColor}" IconColor="{Binding  MonthIteratorIconColor}" />
+                <local:IteratorControl Grid.Column="1" x:Name="yearIterator" VerticalOptions="Center"
+                        SelectorBackgroundColor="{Binding YearSelectorBackground}" NextPadding="0,0,4,0"
+                        NameColor="{Binding YearIteratorNameColor}" IconColor="{Binding YearIteratorIconColor}"/>
+                <local:IteratorControl Grid.Column="0"  Grid.ColumnSpan="2" x:Name="weekIterator" VerticalOptions="Center"
+                        SelectorBackgroundColor="{Binding WeekSelectorBackground}" PrevPadding="4,0,0,0" NextPadding="0,0,4,0"
+                        NameColor="{Binding WeekIteratorNameColor}" IconColor="{Binding WeekIteratorIconColor}"/>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

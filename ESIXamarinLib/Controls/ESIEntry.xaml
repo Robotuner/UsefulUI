@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:behavior="clr-namespace:ESIXamarinLib.Behaviors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESIXamarinLib.Controls.ESIEntry">
+    <ContentView.Resources>
+        <ResourceDictionary Source="./ControlResources.xaml" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid x:Name="fieldPanel" Margin="5,0,5,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" x:Name="fieldLabel" Style="{StaticResource DataLabelStyle}"/>
+            <Label Grid.Row="0" Grid.Column="1" x:Name="required" Style="{StaticResource RequiredMessageStyle}"/>
+            <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="fieldValue" Style="{StaticResource EntryValueStyle}" TextChanged="OnEntryChanged" >
+                <Entry.Behaviors>
+                    <behavior:SelectOnEntryBehavior/>
+                </Entry.Behaviors>
+            </Entry>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="fieldValueDisplay" Style="{StaticResource EntryValueDisplayStyle}" />
+        </Grid>
+  </ContentView.Content>
+</ContentView>

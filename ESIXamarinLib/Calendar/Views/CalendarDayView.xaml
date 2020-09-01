@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"             
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:model="clr-namespace:ESIXamarinLib.Models"
+             mc:Ignorable="d"  Visual="MaterialParent"
+             x:Class="ESIXamarinLib.Calendar.Views.CalendarDayView">
+    <ContentView.Resources>
+        <ResourceDictionary Source="../CalendarResources.xaml" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Frame x:Name="dayToday" HeightRequest="{Binding GridDim}" Padding="2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="dayGrid_Tapped"/>
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="calendarDay" Margin="0" VerticalOptions="Start" HorizontalOptions="Start" />
+                <FlexLayout Grid.Row="1" x:Name="flexLayout" Direction="Row" AlignItems="Center" Wrap="Wrap" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Symbol}" FontFamily="{Binding FontFamily}" FontSize="{Binding FontSize}" Margin="2"
+                                   TextColor="{Binding Color}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

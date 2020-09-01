@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:model="clr-namespace:ESIXamarinLib.Models"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"  Visual="MaterialParent"
+             x:Class="ESIXamarinLib.Calendar.Views.IteratorControl">
+    <ContentView.Resources>
+        <ResourceDictionary Source="../CalendarResources.xaml" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0" x:Name="iteratorGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="previous" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="true" Text="{x:Static model:ESILibFontAwesome.ChevronLeft}"
+                   FontFamily="{StaticResource FontAwesomeSolid}" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Previous_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label x:Name="iteratorName" Grid.Column="1" HorizontalOptions="Center" />
+            <Label x:Name="next" Grid.Column="2"  VerticalOptions="Center" HorizontalOptions="Center" IsVisible="true" Text="{x:Static model:ESILibFontAwesome.ChevronRight}"
+                   FontFamily="{StaticResource FontAwesomeSolid}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Next_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

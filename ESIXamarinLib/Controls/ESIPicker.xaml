@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ESIXamarinLib.Controls"
+             xmlns:model="clr-namespace:ESIXamarinLib.Models"
+             mc:Ignorable="d"
+             x:Class="ESIXamarinLib.Controls.ESIPicker">
+    <ContentView.Resources>
+        <ResourceDictionary Source="./ControlResources.xaml" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid Margin="5,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="2" x:Name="pickerLabel" Style="{StaticResource DataLabelStyle}"/>
+            <Label Grid.Row="0" Grid.ColumnSpan="2" x:Name="required" Style="{StaticResource RequiredMessageStyle}"/>
+            <local:ESIBindablePicker Grid.Row="1" x:Name="picker" VerticalOptions="Center" HorizontalOptions="FillAndExpand" 
+                    ItemSelected="picker_ItemSelected" SelectedIndexChanged="picker_SelectedIndexChanged"/>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="clearComponent" Text="{x:Static model:ESILibFontAwesome.TimesCircle}" 
+                   FontFamily="{StaticResource FontAwesomeSolid}" VerticalOptions="Center" FontSize="Large">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Clear_Tapped"  NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.ColumnSpan="2" x:Name="pickerDisplay" Style="{StaticResource EntryValueDisplayStyle}" />
+        </Grid>
+  </ContentView.Content>
+</ContentView>

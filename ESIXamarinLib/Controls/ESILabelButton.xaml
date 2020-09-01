@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:ESIXamarinLib.Models"
+             x:Class="ESIXamarinLib.Controls.ESILabelButton">
+    <ContentView.Resources>
+        <ResourceDictionary Source="./ControlResources.xaml" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Frame x:Name="frame" Padding="0" HorizontalOptions="Start" VerticalOptions="Center">
+            <StackLayout x:Name="framebase" Orientation="Horizontal" HorizontalOptions="Fill" >
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="LabelButton_Tapped" />
+                </StackLayout.GestureRecognizers>
+                <Label x:Name="labelText" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Label x:Name="labelIcon" Text="{x:Static model:ESILibFontAwesome.Ban}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

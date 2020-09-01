@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ctrls="clr-namespace:ESIXamarinLib.Controls;assembly=ESIXamarinLib"
+             xmlns:model="clr-namespace:UsefulUI.Models"
+             xmlns:local="clr-namespace:UsefulUI.Views"
+             mc:Ignorable="d" Title="Date and Time Example"
+             x:Class="UsefulUI.Views.DateAndTimePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cal" Clicked="Info_Clicked" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static model:FontAwesome.InfoCircle}" Color="White"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="8,0">
+            <local:TestMode />
+            <Label Text="{Binding SelectedDateTime, StringFormat='Current: {0}'}"  VerticalOptions="Start" BackgroundColor="Bisque" />
+            <ctrls:ESIDateAndTime SelectedDateTime="{Binding SelectedDateTime}" CanEdit="{Binding EditMode}"
+                   DateTitle="Date" TimeTitle="Time" ReadOnlyTitle="Date it happened:" ShowRequiredFlag="{Binding IsRequired}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

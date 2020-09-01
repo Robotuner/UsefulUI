@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutInfo" xml:space="preserve">
+    <value>A collection of useful UI that I have used or created for routine data display or entry in business apps. Some are mundane, others are more interesting.  The primary goal was to minimize xaml that would generally be repeated.  Many of the controls are consolidated controls that include a title to describe the data, an option to include an IsRequired Notification, a Label display of the data and the typical Xamarin control itself. 
+
+Calendar View - the most ambitious control.  Supports month and week views, single date selection. Demo provides sample of how to create Agenda View from selected date.
+
+DateTime control - supports IsRequired, Readonly Label display, edit mode and reset to null.
+
+Editor control - supports IsRequired, Readonly Label display, edit mode.
+
+Entry Behaviors - fairly mundane, behaviors for decimal, double, int and email data input.
+
+Entry control - supports IsRequired, Readonly Label display, edit mode.
+
+FontAwesome Viewer - a simple viewer to look at FA Free icons.
+
+Phone Entry - supports IsRequired, Readonly Label display, edit mode, dialing. Expects 10 digits.  If more are entered, then it assumes the first digits are country code.
+
+Picker Control - supports IsRequired, ReadOnly label display, standard xaml picker action, and ability to unselect selection.
+
+Search - Supports IsRequired, Readonly Label display, selection mode. Allows user to select and unselect multiple items.</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Useful UI</value>
+  </data>
+  <data name="CalendarHelp" xml:space="preserve">
+    <value>CalendarBackground:Background color of entire calendar.
+CalendarDayFontSize:Size of Text on Calendar Day.
+CalendarDayPadding:Padding around Calendar day content.
+CloseOnSelect:bool, instructs control to close the month view on select date (single select only).
+DayOfWeekFontAttributes:FontAttributes for Day Of Week.
+DayOfWeekFontSize:Size of Day of Week (M, T, W, Th, ...)
+DefaultColor:Default text color of control.
+GridDim:Height of each Day cell in Week or month view.
+HideNonMonthDates:bool, instructs control to not display dates outside of current selected month.
+IsWeekFormat:bool, Show 7 day week.
+IteratorIconLeft:FontAwesome icon for left iterator.
+IteratorIconRight:FontAwesome icon for right iterator.
+MonthIteratorIconColor:Color of previous and next chevrons.
+MonthIteratorNameColor:Color of Month iterator text.
+MonthSelectorBackground:Background color of year iterator control.
+MonthSelectorDim:Height of month iterator row.
+MonthSelectorFontSize:Size of Text in Month Iterator.
+MonthYearSelectorGridBackground:Background color of month and year iterator control.
+MultiSelect:bool, indicates multiselection mode.
+NotCurrentMonthBackgroundColor:Background of dates outside of current month.
+NotCurrentMonthTextColor:Text color of dates outside of current month.
+NotInCurrentMonthOpacity:Opacity of dates not in current month.
+SaturdayBackgroundColor:Background color on SaturdayBackgroundColor.
+SaturdayBackgroundOpacity:Opacity of Saturday Background color.
+SaturdayColor:Text color on saturday.
+SelectedDateBackgroundColor:Background color of selected date.
+SelectedDates:ObservableCollection of DateTimes that are selected.
+SelectedMonthIterator:IIteratorItem, The current calendar month.
+SelectedYearIterator:IIteratofItem, The current calendar year.
+StartingDate:Date to initialize calendar when opened.
+StartOfWeek:DayOfWeek, indicates start of week.
+SundayBackgroundColor:Background color on Sunday.
+SundayBackgroundOpacity:Opacity of Sunday background color.
+SundayColor:Text color on sunday.
+SwipeEnabled:bool, Enables swipe to change month and year.
+TodayBackgroundColor:Background color of Today date.
+TodayColor:Text Color of Today date.
+WeekHeaderDim:Height of week iterator row.
+WeekHeaderTextColor:Text color of week Days (M, T, W, Th, ...)
+WeekIteratorIconColor:Color of previous and next chevrons.
+WeekIteratorNameColor:Color of Week iterator text.
+WeekSelectorBackgroundColor:Background color of the Week Iterator control.
+WeekSelectorFontSize:Size of Text in Week Iterator.
+WeekViewHeaderBackground:Background color of Week Header (M,T,W,TH, ...)
+WeekViewOnSelect:bool, Switch to week view on select.
+YearIteratorIconColor:Color of previous and next chevrons.
+YeariteratorNameColor:Color of Year iterator text.
+YearSelectorBackground:Background color of year iterator control.
+YearSelectorFontSize:Size of Text in Year Iterator.</value>
+  </data>
+  <data name="DateAndTimeHelp" xml:space="preserve">
+    <value>AllowFutureDate:sets the maxDate in DateTimePicker
+CanEdit:bool:switch between edit and readonly mode
+DateAndTimeMargin:Thickness, margin of Date picker.
+DateFormat:DateFormat
+DateTitle:string:title in edit mode
+ReadOnlyDateTimeFormat:Date format of date.
+ReadOnlyDateTimePlaceholder:string to display when SelectedDateTime is null
+ReadOnlyDateTimePlaceholderColor:text color of placeholder
+ReadOnlyDateTimeTextColor:text color of readonly datetime
+ReadOnlyTitle:string:title when readonly mode
+SelectedDateTime:A DateTime? object.
+TimeFormat:format of time picker:"T" or "t"
+TimeTitle:string:title in edit mode</value>
+  </data>
+  <data name="EditorHelp" xml:space="preserve">
+    <value>About: describe something.</value>
+  </data>
+  <data name="EntryHelp" xml:space="preserve">
+    <value>AsPassword:bool, treat entry as password entry.
+BkgColor:Color, Background color of entire control.
+CanEdit:bool, toggle from readonly to edit mode.
+EntryMargin:Thickness, margin of entry control.
+KeyboardType:KeyboardType
+FieldLabel:string Entry Title.
+FieldValue:string, item bound to entry control.
+PlaceHolder:string Entry PlaceHolder.
+ReadOnlyPlaceholder:string, indicating entry text.
+ReadOnlyPlaceholderColor:Color of readonly placeholder string.
+ReadOnlyTextColor:Color of readonly text.
+RequiredMessage:string, string indicating required.
+ShowRequiredFlag:bool, entry is required.</value>
+  </data>
+  <data name="LabelButtonHelp" xml:space="preserve">
+    <value>ButtonMargin:Margin around the button.
+ButtonCornerRadius:Corner Radius of control.
+ButtonWidthReques:How wide to make control.  Default is 150 px.
+ButtonText:Label text.
+ButtonAttributes:FontAttribute for ButtonText.
+ButtonBackground:Background color of control.
+ButtonTextMargin:Margin around text that is displayed in the control.
+ButtonLineBreakMode:LineBreakMode for text.
+ButtonIcon:Icon to display.  Default is FontAwesome check.
+ButtonIconFamily:Must be set, no default.
+ButtonIconColor:Color of Icon.
+Command:Command to execute when button is clicked.
+TextColor:Color of text.</value>
+  </data>
+  <data name="MultiFilterHelp" xml:space="preserve">
+    <value>About: Control that allows selection of multiple filters.</value>
+  </data>
+  <data name="PhoneEntryHelp" xml:space="preserve">
+    <value>CanEdit:bool, toggle from read only to edit mode.
+FormatPhoneNumber:Func&lt;string,string&gt;, callback to format string for readonly display.
+PhoneTitle:string, Title of control.
+ReadOnlyPlaceHolder:string to display when no phone entered.
+ReadOnlyPlaceHolderColor:Color of placeholder.
+RequiredMessage:string, string that is displayed when required
+SelectedPhone:string, phone number no spaces or delimiters, 10 digits min.
+SelectedPhoneMargin:Thickness, margin of selected Phone field.
+ShowRequiredFlag:bool, displays required message</value>
+  </data>
+  <data name="PickerHelp" xml:space="preserve">
+    <value>CanEdit:bool, indicating if readonly or selection mode.
+DisplayMemberPath:string, property of object to display in picker.
+ItemsSource:Collection of items to display by picker.
+PickerLabel:string, used for Label over Picker.
+PickerLabelColor:Color, color of picker label text.
+PickerLabelFontSize:string, FontSize of PickerLabel.
+PickerPlaceholder:string, text to display when there is no selection.
+PickerPlaceholderColor:Color, color of PickerPlaceholder.
+PickerTitle:string, used by Picker when there is no selection.
+PickerMargin:Thickness, margin of picker.
+ReadOnlyFontSize:string, FontSize of readonly text.
+ReadOnlyTextColor:Color, color of readonly only selection.
+RequiredMessage:string, Text to display when required.
+SelectedIndex:int?, index of selected item.
+SelectedItem:object, items that is selected.
+SelectedValuePath:string, property of object that is selected.
+ShowRequiredFlag:bool, Toggles IsRequired message</value>
+  </data>
+  <data name="SearchHelp" xml:space="preserve">
+    <value>About:Control that allows for searching a list</value>
+  </data>
+</root>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ESIXamarinLib.Controls.ESIEditor">
+    <ContentView.Resources>
+        <ResourceDictionary Source="./ControlResources.xaml" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid x:Name="fieldPanel">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" x:Name="fieldLabel" Style="{StaticResource DataLabelStyle}"/>
+            <Label Grid.Row="0" Grid.Column="1" x:Name="required" Style="{StaticResource RequiredMessageStyle}"/>
+            <StackLayout x:Name="fieldBorder" Orientation="Vertical" Spacing="0"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Padding="1"  >
+                <Editor x:Name="fieldValue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="Small" 
+                        Keyboard="Chat" HeightRequest="100" TextChanged="OnEntryChanged" />
+            </StackLayout>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="fieldValueDisplay" Style="{StaticResource EntryValueDisplayStyle}" FontSize="Small" LineBreakMode="WordWrap"  />
+        </Grid>
+    </ContentView.Content>
+</ContentView>
