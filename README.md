@@ -10,13 +10,15 @@ For DateTime, line of business application will need both a date and a time, som
 DateTime control is nullable, . . . some mechanism must be provided for entering a null Date Time.
 
 Some of the composite controls are:
-Label
-Entry
-Editor
-Date and Time
-Search
-Multi-Column Grid
-Calendar
+<ul>
+  <li>Label</li>
+  <li>Entry</li>
+  <li>Editor</li>
+  <li>Date and Time</li>
+  <li>Search</li>
+  <li>Multi-Column Grid</li>
+  <li>Calendar</li>
+</ul>
 
 # Documentation
 Please look at the website for a complete description.  https://www.engenious.com/UsefulUI/Intro.html
