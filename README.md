@@ -18,13 +18,13 @@ Search
 Multi-Column Grid
 Calendar
 
-#Documentation
+# Documentation
 Please look at the website for a complete description.  https://www.engenious.com/UsefulUI/Intro.html
 
-#Supported Platforms
+# Supported Platforms
 Android and iOS, there are no plans to support UWP.
 
-#Initial Release Versions
+# Initial Release Versions
 Initial release Version 16.7.0. 
 .Net Framework 4.8.04752
 Xamarin 16.7
