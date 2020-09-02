@@ -2,6 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description>Collection of useful UI for collecting data.  
+FontAwesome Viewer - Look at Free FA icons.
+Entry Behaviors - Behaviors for data entry, decimal, double, int, email address.
+DateTime? input - supports IsRequired notification, DateTime?, readonly display and edit modes.  Date and time entry.
+Phone Entry - supports IsRequired notification, readonly display and edit modes, dialing.
+Picker - Picker Title, supports IsRequired notification, readonly display, ability to select and unselect choice.
+Entry - Entry Title, supports IsRequired notification, readonly display, and edit modes.
+Editor - Editor Title, supposts IsRequired notification, readonly display and editor mode.</Description>
+    <Copyright>Engenious Systems, Inc</Copyright>
+    <PackageProjectUrl>https://www.engenious.com/UsefulUI/Intro.html</PackageProjectUrl>
+    <RepositoryUrl>github.com/Robotuner/UsefulUI</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Release 1.0.0 is a beta release</PackageReleaseNotes>
+    <PackageId>engenious.com.UsefulUI</PackageId>
+    <Authors>Engenious Systems, Inc.</Authors>
+    <Product>Useful Ui</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>Xamarin,UI,Controls,Label,Entry,Editor,Calendar,Picker,Search,Grid</PackageTags>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
