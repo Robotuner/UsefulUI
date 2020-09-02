@@ -385,7 +385,7 @@ namespace ESIXamarinLib.Controls
         }
         private void Phone_Tapped(object sender, EventArgs e)
         {
-            if (SelectedPhone.Length >= 10)
+            if (!string.IsNullOrEmpty(SelectedPhone) &&  SelectedPhone.Length >= 10)
             {
                 PhoneDialer.Open(SelectedPhone);
             }
