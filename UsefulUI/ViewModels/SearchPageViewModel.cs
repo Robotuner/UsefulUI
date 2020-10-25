@@ -39,7 +39,10 @@ namespace UsefulUI.ViewModels
         private ObservableCollection<SearchItem> filteredList;
         public ObservableCollection<SearchItem> FilteredList
         {
-            get { return filteredList; }
+            get 
+            { 
+                return filteredList;
+            }
             set
             {
                 if (filteredList != value)
@@ -123,6 +126,7 @@ namespace UsefulUI.ViewModels
                 this.FilteredList.Add(new SearchItem(item.ID, item.ID, item));
             }
         }
+
         public void FilterChanged(string filter)
         {
             this.FilteredList.Clear();

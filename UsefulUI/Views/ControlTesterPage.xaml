@@ -18,11 +18,33 @@
                     <Setter Property="behaviors:DecimalValidationBehavior.AttachBehavior" Value="True" />
                 </Style>
             </StackLayout.Resources>
-            <Entry Placeholder="Expects Decimal value" Style="{StaticResource decimalInputStyle}"  Keyboard="Numeric"/>
-            <Entry Placeholder="Expects Double value" behaviors:DoubleValidationBehavior.AttachBehavior="True" Keyboard="Numeric" />
-            <Entry Placeholder="Expects Int value" behaviors:IntValidationBehavior.AttachBehavior="True" Keyboard="Numeric" />
-            <Entry behaviors:EmailValidationBehavior.AttachBehavior="True" Placeholder="Enter valid email address" />
-
+            <Label Text="Example behavior that limits numeric input to 4 places before decimal and 2 places after decimal" LineBreakMode="WordWrap" FontSize="Small"
+                   TextColor="Gray"/>
+            <Entry Placeholder="Expect 4 max before and 2 max after"
+                   behaviors:DigitsBeforeAndAfterBehavior.AttachBehavior="True" 
+                   behaviors:DigitsBeforeAndAfterBehavior.AllowableDigitsBefore="4" 
+                   behaviors:DigitsBeforeAndAfterBehavior.AllowableDigitsAfter="2" 
+                   Keyboard="Numeric"/>
+            <Label Text="Example behavior that limits numeric input to 2 places after decimal" LineBreakMode="WordWrap" FontSize="Small"
+                   TextColor="Gray"/>
+            <Entry Placeholder="Num with 2 decimal places" 
+                    behaviors:DigitsAfterDecimalBehavior.AttachBehavior="True" 
+                   behaviors:DigitsAfterDecimalBehavior.AllowableDigitsAfter="2" 
+                   Keyboard="Numeric" />
+            <Label Text="Example behavior that limits numeric input to 4 places before decimal" LineBreakMode="WordWrap" FontSize="Small"
+                   TextColor="Gray"/>
+            <Entry Placeholder="Num with 4 places before decimal" 
+                   behaviors:DigitsBeforeDecimalBehavior.AttachBehavior="True" 
+                   behaviors:DigitsBeforeDecimalBehavior.AllowableDigitsBefore="4" 
+                   Keyboard="Numeric" />
+            <Label Text="Example behavior that limits integer input to x places" LineBreakMode="WordWrap" FontSize="Small"
+                   TextColor="Gray"/>
+            <Entry Placeholder="Integer value up to 4 digits" 
+                   behaviors:DigitsBeforeDecimalBehavior.AttachBehavior="True" 
+                   behaviors:DigitsBeforeDecimalBehavior.AllowableDigitsBefore="4" 
+                   Keyboard="Numeric" />
+            <Entry behaviors:EmailValidationBehavior.AttachBehavior="True" 
+                   Placeholder="Enter valid email address" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

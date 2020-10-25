@@ -10,20 +10,21 @@ DateTime? input - supports IsRequired notification, DateTime?, readonly display 
 Phone Entry - supports IsRequired notification, readonly display and edit modes, dialing.
 Picker - Picker Title, supports IsRequired notification, readonly display, ability to select and unselect choice.
 Entry - Entry Title, supports IsRequired notification, readonly display, and edit modes.
-Editor - Editor Title, supposts IsRequired notification, readonly display and editor mode.</Description>
+Editor - Editor Title, supposts IsRequired notification, readonly display and editor mode.
+AlphaPicker - a simple picker that allows filtering of selection Items based on the first character of search property</Description>
     <Copyright>Engenious Systems, Inc</Copyright>
     <PackageProjectUrl>https://www.engenious.com/UsefulUI/Intro.html</PackageProjectUrl>
     <RepositoryUrl>github.com/Robotuner/UsefulUI</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Release 1.0.0 is a beta release</PackageReleaseNotes>
+    <PackageReleaseNotes>Release 1.0.4 is a beta release</PackageReleaseNotes>
     <PackageId>engenious.com.UsefulUI</PackageId>
     <Authors>Engenious Systems, Inc.</Authors>
     <Product>Useful Ui</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Xamarin,UI,Controls,Label,Entry,Editor,Calendar,Picker,Search,Grid</PackageTags>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
-    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,6 +33,18 @@ Editor - Editor Title, supposts IsRequired notification, readonly display and ed
     <PackageReference Include="Xam.Plugin.Iconize.Material" Version="3.5.0.129" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\ESIAlphaPicker.xaml.cs">
+      <DependentUpon>ESIAlphaPicker.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\ESIAlphaPicker.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

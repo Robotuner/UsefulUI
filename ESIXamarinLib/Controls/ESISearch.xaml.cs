@@ -257,6 +257,7 @@ namespace ESIXamarinLib.Controls
                 this.required.TextColor = Color.Gray;
             }
         }
+
         private void ItemTapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             if ((sender as Grid).BindingContext is ISearchItem sc)   

@@ -276,4 +276,7 @@ ShowRequiredFlag:bool, Toggles IsRequired message</value>
   <data name="SearchHelp" xml:space="preserve">
     <value>About:Control that allows for searching a list</value>
   </data>
+  <data name="SlidePickerHelp" xml:space="preserve">
+    <value>Aout:Collection view control with slider for pick options</value>
+  </data>
 </root>

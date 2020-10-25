@@ -13,6 +13,7 @@
         editor,
         search, 
         multiColumnGrid,
-        labelButton
+        labelButton,
+        alphaPicker
     }
 }

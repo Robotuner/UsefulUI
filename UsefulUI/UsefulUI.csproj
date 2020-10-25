@@ -28,7 +28,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AlphaPickerPage.xaml.cs">
+      <DependentUpon>AlphaPickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AlphaPicker\AlphaPickerTemplate.xaml.cs">
+      <DependentUpon>AlphaPickerTemplate.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="AppShell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AlphaPickerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AlphaPicker\AlphaPickerTemplate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

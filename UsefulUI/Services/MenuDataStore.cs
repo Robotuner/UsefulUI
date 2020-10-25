@@ -24,7 +24,8 @@ namespace UsefulUI.Services
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Entry", Description="Entry, EditMode, IsRequired, ", PageType = PageType.entry },
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Editor", Description="Editor, EditMode, IsRequired, ", PageType = PageType.editor },
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Multi-column Grid", Description="Multi-Column Grid, EditMode, IsRequired, ", PageType = PageType.multiColumnGrid },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Label Button", Description="Label Button", PageType = PageType.labelButton }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Label Button", Description="Label Button", PageType = PageType.labelButton },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Alpha Pick", Description = "Picker with alpha selector", PageType = PageType.alphaPicker}
             };
         }
 

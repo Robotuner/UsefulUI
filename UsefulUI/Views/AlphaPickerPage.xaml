@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrls="clr-namespace:ESIXamarinLib.Controls;assembly=ESIXamarinLib"
+             xmlns:model="clr-namespace:UsefulUI.Models"
+              xmlns:tmplate="clr-namespace:UsefulUI.Views.AlphaPicker"
+             xmlns:local="clr-namespace:UsefulUI.Views" Title="Alpha Picker"
+             x:Class="UsefulUI.Views.AlphaPickerPage">
+  
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cal" Clicked="Info_Clicked" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static model:FontAwesome.InfoCircle}" Color="White"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AlphaPickerTemplate">
+            <tmplate:AlphaPickerTemplate/>
+        </DataTemplate>
+    </ContentPage.Resources>
+    <ctrls:ESIAlphaPicker Margin="8,0" SourceList="{Binding FilteredList}"  SelectedItem="{Binding SelectedItem}" SelectedChoice="{Binding SelectedChoice}"
+                          Template="{StaticResource AlphaPickerTemplate}" ItemSourceBackground="Bisque" ControlBkgColor="Yellow" />
+</ContentPage>

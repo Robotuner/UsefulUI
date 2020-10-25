@@ -1,11 +1,9 @@
-﻿using UsefulUI.Models;
-using UsefulUI.ViewModels;
-using UsefulUI.Views.Calendar;
-using ESIXamarinLib.Calendar.Views;
-using ESIXamarinLib.FAViewer.Views;
+﻿using ESIXamarinLib.FAViewer.Views;
 using System;
 using System.ComponentModel;
-using System.Threading.Tasks;
+using UsefulUI.Models;
+using UsefulUI.ViewModels;
+using UsefulUI.Views.Calendar;
 using Xamarin.Forms;
 
 namespace UsefulUI.Views
@@ -62,6 +60,9 @@ namespace UsefulUI.Views
                     break;
                 case PageType.labelButton:
                     await Navigation.PushAsync(new LabelButton());
+                    break;
+                case PageType.alphaPicker:
+                    await Navigation.PushAsync(new AlphaPickerPage());
                     break;
                 default:
                         await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));

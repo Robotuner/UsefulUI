@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsefulUI.Views.AlphaPicker.AlphaPickerTemplate">
+    <ContentView.Content>
+        <!-- 
+             Note how we are just binding to the SearchItem.Item object with the propertyname of 
+             from the ExampleSearchItem model!!
+        -->
+        <StackLayout Orientation="Vertical" Spacing="0" Margin="0,2">
+            <Label Text="{Binding Item.ID}" TextColor="Red"/>
+            <Label Text="{Binding Item.Description}" FontSize="Small"  Margin="5,0,0,0" TextColor="Green"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
