@@ -13,6 +13,7 @@ Some of the composite controls are:
 <ul>
   <li>Label</li>
   <li>Entry</li>
+  <li>Entry Behaviors</li>
   <li>Editor</li>
   <li>Date and Time</li>
   <li>Search</li>
