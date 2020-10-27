@@ -10,7 +10,7 @@
         <ResourceDictionary Source="../CalendarResources.xaml" />
     </ContentView.Resources>
     <ContentView.Content>
-        <Frame x:Name="dayToday" HeightRequest="{Binding GridDim}" Padding="2">
+        <Frame x:Name="dayToday" HeightRequest="{Binding GridDim}" Padding="2" HasShadow="False">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="dayGrid_Tapped"/>
             </Frame.GestureRecognizers>

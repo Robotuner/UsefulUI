@@ -79,7 +79,7 @@ namespace ESIXamarinLib.Behaviors
             {                
                 if (sender is Entry entry)
                 {
-                    string pattern = string.Format("^\\d{{0,{0}}}(\\.?\\d{{0,{1}}})$", GetAllowableDigitsBefore(entry), GetAllowableDigitsAfter(entry));
+                    string pattern = string.Format("^\\d{{0,{0}}}(\\.\\d{{0,{1}}})?$", GetAllowableDigitsBefore(entry), GetAllowableDigitsAfter(entry));
                     Regex regex = new Regex(pattern);
                     Match match = regex.Match(args.NewTextValue.ToString());
                     isValid = match.Success;          

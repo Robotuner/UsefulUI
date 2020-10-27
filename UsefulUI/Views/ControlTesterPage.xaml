@@ -43,6 +43,12 @@
                    behaviors:DigitsBeforeDecimalBehavior.AttachBehavior="True" 
                    behaviors:DigitsBeforeDecimalBehavior.AllowableDigitsBefore="4" 
                    Keyboard="Numeric" />
+            <Label Text="Regex Validation behavior" LineBreakMode="WordWrap" FontSize="Small"
+                   TextColor="Gray"/>
+            <Entry Placeholder="Validates any Regex" 
+                   behaviors:RegexValidatorBehavior.AttachBehavior="True" 
+                   behaviors:RegexValidatorBehavior.Pattern="^\d*$" 
+                   Keyboard="Default" />
             <Entry behaviors:EmailValidationBehavior.AttachBehavior="True" 
                    Placeholder="Enter valid email address" />
         </StackLayout>
