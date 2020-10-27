@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsefulUI.Android", "UsefulU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsefulUI.iOS", "UsefulUI.iOS\UsefulUI.iOS.csproj", "{21A83537-4CCD-4B29-AFE3-D192FF680A1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsefulUI", "UsefulUI\UsefulUI.csproj", "{04930C88-2DC6-4DCA-8C25-703C1EDAA111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsefulUI", "UsefulUI\UsefulUI.csproj", "{04930C88-2DC6-4DCA-8C25-703C1EDAA111}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESIXamarinLib", "ESIXamarinLib\ESIXamarinLib.csproj", "{D96A85A4-7ACA-42E3-8747-B1D47A8FE863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESIXamarinLib", "ESIXamarinLib\ESIXamarinLib.csproj", "{D96A85A4-7ACA-42E3-8747-B1D47A8FE863}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
